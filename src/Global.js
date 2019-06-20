@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import Queue from "./Queue";
 
 const Global = () => {
   const [savedArticles, setSavedArticles] = useState([]);
@@ -21,7 +22,7 @@ const Global = () => {
     ReactDOM.render(<App addArticle={addArticle} />, leesQueueButton);
   });
 
-  return null;
+  return <Queue savedArticles={savedArticles} />;
 };
 
 export default Global;
