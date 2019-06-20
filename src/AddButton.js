@@ -1,6 +1,6 @@
-import React from "react";
-import styled, { createGlobalStyle } from "styled-components";
-import Logo from "./Logo";
+import React from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
+import Logo from './Logo';
 
 const Button = styled.div`
   position: absolute;
@@ -15,9 +15,9 @@ const Button = styled.div`
 
 const AddButton = ({ addArticle }) => {
   const addToQueue = event => {
-    const articleNode = event.target.closest("article");
+    const articleNode = event.target.closest('article');
     const articleUrl = articleNode.dataset.vrContentboxUrl;
-    const articleDmf = articleUrl.split("/")[articleUrl.split("/").length - 1];
+    const articleDmf = articleUrl.split('/')[articleUrl.split('/').length - 1];
     addArticle(articleDmf);
   };
   return (

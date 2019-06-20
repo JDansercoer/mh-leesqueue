@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Wrapper = styled.svg`
-  fill: "#FF0000";
+  fill: '#FF0000';
   width: ${props => props.svgWidth}px;
   height: ${props => props.svgHeight}px;
 `;

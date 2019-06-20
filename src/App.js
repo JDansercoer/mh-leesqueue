@@ -1,7 +1,7 @@
-import React from "react";
-import { hot } from "react-hot-loader";
-import { createGlobalStyle } from "styled-components";
-import AddButton from "./AddButton";
+import React from 'react';
+import { hot } from 'react-hot-loader';
+import { createGlobalStyle } from 'styled-components';
+import AddButton from './AddButton';
 
 const GlobalStyle = createGlobalStyle`
   article {
