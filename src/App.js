@@ -13,10 +13,10 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const App = ({ onAdd }) => (
+const App = ({ addArticle }) => (
   <>
     <GlobalStyle />
-    <AddButton onAdd={onAdd} />
+    <AddButton addArticle={addArticle} />
   </>
 );
 

@@ -12,8 +12,13 @@ const Button = styled.div`
   display: none;
 `;
 
-const AddButton = () => {
-  const addToQueue = () => alert("added");
+const AddButton = ({ addArticle }) => {
+  const addToQueue = event => {
+    const articleNode = event.target.parentNode.parentNode;
+    const articleUrl = articleNode.dataset.vrContentboxUrl;
+    const articleDmf = articleUrl.split("/")[articleUrl.split("/").length - 1];
+    addArticle(articleDmf);
+  };
   return (
     <Button className="lq-button" onClick={addToQueue}>
       Add
