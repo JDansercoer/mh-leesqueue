@@ -23,6 +23,22 @@ const Global = () => {
     localStorage.setItem('leesQueue', JSON.stringify(newArticles));
   };
 
+  const next = () => {
+    const [nextArticle, ...otherArticles] = savedArticles;
+    console.log(otherArticles);
+
+    setSavedArticles(otherArticles);
+    localStorage.setItem('leesQueue', JSON.stringify(otherArticles));
+
+    window.location = `https://test.nieuwsblad.be/cnt/${nextArticle}`;
+  };
+
+  const clear = () => {
+    setArticleDatas([]);
+    setSavedArticles([]);
+    localStorage.removeItem('leesQueue');
+  };
+
   useEffect(() => {
     if (savedArticles) {
       axios({
@@ -43,7 +59,7 @@ const Global = () => {
     ReactDOM.render(<App addArticle={addArticle} />, leesQueueButton);
   });
 
-  return <Queue articles={articleDatas} />;
+  return <Queue articles={articleDatas} next={next} clear={clear} />;
 };
 
 export default Global;

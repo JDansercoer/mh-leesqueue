@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Logo from './Logo';
+import Play from './Play';
+import Remove from './Remove';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -52,7 +54,17 @@ const QueueLogo = styled(Logo)`
   margin-right: 10px;
 `;
 
-const Queue = ({ articles }) => {
+const Actions = styled.div`
+  position: absolute;
+  top: 0;
+  transform: translateY(-100%);
+  right: 0;
+  box-shadow: rgb(170, 170, 170) -4px -3px 3px -3px;
+  display: flex;
+  border-top-left-radius: 20px;
+`;
+
+const Queue = ({ articles, next, clear }) => {
   if (articles.length === 0) {
     return null;
   }
@@ -76,6 +88,10 @@ const Queue = ({ articles }) => {
           );
         })}
       </QueueWrapper>
+      <Actions>
+        <Play onClick={next} />
+        <Remove onClick={clear} />
+      </Actions>
     </Wrapper>
   );
 };
