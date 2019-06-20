@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Logo from "./Logo";
 
 const Wrapper = styled.div`
   position: fixed;
@@ -31,6 +32,7 @@ const Queue = ({ savedArticles }) => {
     <Wrapper>
       <Title>Leesqueue</Title>
       <QueueWrapper>
+        <Logo />
         {savedArticles.map(article => {
           return <SingleArticle>{article}</SingleArticle>;
         })}

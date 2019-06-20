@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
+import Logo from "./Logo";
 
 const Button = styled.div`
   position: absolute;
@@ -14,14 +15,14 @@ const Button = styled.div`
 
 const AddButton = ({ addArticle }) => {
   const addToQueue = event => {
-    const articleNode = event.target.parentNode.parentNode;
+    const articleNode = event.target.parentNode.parentNode.parentNode;
     const articleUrl = articleNode.dataset.vrContentboxUrl;
     const articleDmf = articleUrl.split("/")[articleUrl.split("/").length - 1];
     addArticle(articleDmf);
   };
   return (
     <Button className="lq-button" onClick={addToQueue}>
-      Add
+      <Logo width={30} height={24} />
     </Button>
   );
 };
