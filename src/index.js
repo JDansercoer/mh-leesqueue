@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import App from "./App";
+import Global from "./Global";
 
-const body = document.getElementsByClassName("body-wrapper");
 const articles = document.getElementsByTagName("article");
 console.log(articles);
 
-Array.prototype.slice.call(articles).forEach(article => {
-  ReactDOM.render(<App />, article);
-});
+const leesQueueRoot = document.createElement("div"); // Create a <li> node
+leesQueueRoot.id = "lq-root";
+document.body.appendChild(leesQueueRoot);
+
+ReactDOM.render(<Global />, leesQueueRoot);
