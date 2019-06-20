@@ -1,10 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import App from './App';
+import App from "./App";
 
-const rootEl = document.getElementById('root');
-ReactDOM.render(
-  <App />,
-  rootEl,
-);
+const body = document.getElementsByClassName("body-wrapper");
+const articles = document.getElementsByTagName("article");
+console.log(articles);
+
+Array.prototype.slice.call(articles).forEach(article => {
+  ReactDOM.render(<App />, article);
+});
