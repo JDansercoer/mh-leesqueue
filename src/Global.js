@@ -6,11 +6,9 @@ import Queue from './Queue';
 
 const Global = () => {
   const [savedArticles, setSavedArticles] = useState(
-    localStorage.getItem('leesQueue'),
+    JSON.parse(localStorage.getItem('leesQueue')),
   );
   const [articleDatas, setArticleDatas] = useState([]);
-
-  console.log(savedArticles);
 
   const addArticle = articleId => {
     const newArticles = savedArticles
@@ -22,7 +20,7 @@ const Global = () => {
       data: newArticles,
     }).then(res => setArticleDatas(res.data));
     setSavedArticles(newArticles);
-    localStorage.setItem('leesQueue', newArticles);
+    localStorage.setItem('leesQueue', JSON.stringify(newArticles));
   };
 
   useEffect(() => {
