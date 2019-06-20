@@ -7,7 +7,7 @@ const Wrapper = styled.svg`
   height: ${props => props.svgHeight}px;
 `;
 
-const Logo = ({ height = 47, width = 60 }) => {
+const Logo = ({ height = 47, width = 60, className }) => {
   return (
     <Wrapper
       xmlns="http://www.w3.org/2000/svg"
@@ -16,6 +16,7 @@ const Logo = ({ height = 47, width = 60 }) => {
       viewBox="0 0 67 46.97"
       svgHeight={height}
       svgWidth={width}
+      className={className}
     >
       <title>logo_leesqueue</title>
       <path

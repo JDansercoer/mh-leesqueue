@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import axios from "axios";
 import App from "./App";
 import Queue from "./Queue";
 
 const Global = () => {
   const [savedArticles, setSavedArticles] = useState([]);
+  const [articleDatas, setArticleDatas] = useState([]);
 
   const addArticle = articleId => {
-    setSavedArticles([...savedArticles, articleId]);
+    const newArticles = [...savedArticles, articleId];
+    axios({
+      method: "POST",
+      url: "http://localhost:3000/https://49375a6c.ngrok.io/api/teaser/4",
+      data: newArticles
+    }).then(res => setArticleDatas(res.data));
+    setSavedArticles(newArticles);
   };
-
-  console.log(savedArticles);
 
   const articles = document.getElementsByTagName("article");
 
@@ -22,7 +28,7 @@ const Global = () => {
     ReactDOM.render(<App addArticle={addArticle} />, leesQueueButton);
   });
 
-  return <Queue savedArticles={savedArticles} />;
+  return <Queue articles={articleDatas} />;
 };
 
 export default Global;
