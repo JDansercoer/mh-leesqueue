@@ -7,7 +7,6 @@ const Button = styled.div`
   cursor: pointer;
   top: 10px;
   right: 10px;
-  padding: 5px;
   font-size: 15px;
   background-color: white;
   display: none;

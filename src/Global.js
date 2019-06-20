@@ -16,7 +16,7 @@ const Global = () => {
       : [articleId];
     axios({
       method: 'POST',
-      url: 'http://localhost:3000/https://49375a6c.ngrok.io/api/teaser/4',
+      url: 'http://localhost:3000/https://0241ee82.ngrok.io/api/teaser/4',
       data: newArticles,
     }).then(res => setArticleDatas(res.data));
     setSavedArticles(newArticles);
@@ -43,7 +43,7 @@ const Global = () => {
     if (savedArticles) {
       axios({
         method: 'POST',
-        url: 'http://localhost:3000/https://49375a6c.ngrok.io/api/teaser/4',
+        url: 'http://localhost:3000/https://0241ee82.ngrok.io/api/teaser/4',
         data: savedArticles,
       }).then(res => setArticleDatas(res.data));
     }
