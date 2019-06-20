@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   z-index: 9001;
   font-family: Helvetica Neue LT, Arial, Helvetica, sans-serif;
   background-color: white;
+  box-shadow: 0px -4px 3px -3px rgb(170, 170, 170);
 `;
 
 const Title = styled.div`
@@ -28,6 +29,7 @@ const QueueWrapper = styled.div`
 const SingleArticle = styled.a`
   display: flex;
   align-items: center;
+  text-decoration: none;
 `;
 
 const ArticleImage = styled.img`

@@ -15,7 +15,7 @@ const Button = styled.div`
 
 const AddButton = ({ addArticle }) => {
   const addToQueue = event => {
-    const articleNode = event.target.parentNode.parentNode.parentNode;
+    const articleNode = event.target.closest("article");
     const articleUrl = articleNode.dataset.vrContentboxUrl;
     const articleDmf = articleUrl.split("/")[articleUrl.split("/").length - 1];
     addArticle(articleDmf);
